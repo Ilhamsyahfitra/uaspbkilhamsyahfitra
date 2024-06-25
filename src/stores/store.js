@@ -28,7 +28,17 @@ export const useAlbumStore = defineStore('albumStore', {
         console.error('Failed to fetch photos:', error);
       } finally {
         this.isLoading = false;
+        
+
       }
     }
   }
 });
+
+export default {
+    build: {
+      rollupOptions: {
+        external: ["axios"]
+      }
+    }
+  }
